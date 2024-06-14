@@ -34,7 +34,7 @@ ll fun(ll a , ll b){
 void SparseTable(){ // O(nLog(n))
     copy(arr , arr+N , st[0]);
     for(int i = 1 ; i < 25 ; i++){
-        for(int j = 0 ; j+(1 << i) < N ; j++){
+        for(int j = 0 ; j+(1 << i) < N ; j++){ // j+(1<< i) <= n
             st[i][j] = fun(st[i-1][j] , st[i-1][j + (1 << (i-1)) ]);
         }
     }
